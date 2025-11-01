@@ -1,5 +1,7 @@
 package strategy;
 
+import builder.News;
+
 public interface NotificationStrategy {
-    void send(String message, String userName);
+    void send(News news, String userName);
 }

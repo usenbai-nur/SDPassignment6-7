@@ -1,4 +1,8 @@
 package observer;
 
-public class Subscriber {
+import builder.News;
+
+public interface Subscriber {
+    void update(News news);
+    String getName();
 }
