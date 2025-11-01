@@ -12,20 +12,20 @@ public class Main {
 
         while (true) {
             System.out.println("\nNews portal menu");
-            System.out.println("1. Add subscriber");
-            System.out.println("2. Remove subscriber");
-            System.out.println("3. Change notification type");
-            System.out.println("4. Publish custom news");
-            System.out.println("5. Import external news");
-            System.out.println("6. List subscribers");
-            System.out.println("0. Exit");
+            System.out.println("1) Add subscriber");
+            System.out.println("2) Remove subscriber");
+            System.out.println("3) Change notification type");
+            System.out.println("4) Publish custom news");
+            System.out.println("5) Import external news");
+            System.out.println("6) List subscribers");
+            System.out.println("7) Exit");
             System.out.print("Choose: ");
 
             int choice = -1;
             try {
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (Exception e) {
-                System.out.println("Invalid input. Try again.");
+                System.out.println("Invalid input, try again.");
                 continue;
             }
 
@@ -67,7 +67,7 @@ public class Main {
                     String name = scanner.nextLine();
                     RegularSubscriber sub = subscriberMap.get(name);
                     if (sub == null) {
-                        System.out.println("Subscriber not found.");
+                        System.out.println("Subscriber not found");
                         break;
                     }
 
@@ -83,7 +83,7 @@ public class Main {
                         default -> new EmailNotification();
                     };
                     sub.setNotificationStrategy(strategy);
-                    System.out.println(name + "'s notification type updated!");
+                    System.out.println(name + "'s notification type updated");
                 }
 
                 case 4 -> {
@@ -119,7 +119,7 @@ public class Main {
 
                 case 6 -> {
                     if (subscriberMap.isEmpty()) {
-                        System.out.println("No subscribers found.");
+                        System.out.println("No subscribers found");
                     } else {
                         System.out.println("Current Subscribers:");
                         for (String name : subscriberMap.keySet()) {
@@ -129,11 +129,11 @@ public class Main {
                 }
 
                 case 0 -> {
-                    System.out.println("Exiting News Portal...");
+                    System.out.println("Exiting news portal-");
                     return;
                 }
 
-                default -> System.out.println("Invalid choice.");
+                default -> System.out.println("Invalid choice");
             }
         }
     }
